@@ -2,7 +2,6 @@ package com.example.admin.pipes;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,36 +27,22 @@ public class Main extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-      /*  if (id == R.id.action_settings) {
-            Toast.makeText(MainActivity.this, getString(R.string.action_settings), Toast.LENGTH_LONG).show();
-        } else  if (id == R.id.action_item1) {
-            Toast.makeText(MainActivity.this, getString(R.string.action_item1), Toast.LENGTH_LONG).show();
-        } else  if (id == R.id.action_item2) {
-            Toast.makeText(MainActivity.this, getString(R.string.action_item2), Toast.LENGTH_LONG).show();
-        } else  if (id == R.id.action_item3) {
-            Toast.makeText(MainActivity.this, getString(R.string.action_item3), Toast.LENGTH_LONG).show();
-        }*/
-
         switch (id) {
             case R.id.action_settings:
                 Toast.makeText(Main.this, getString(R.string.action_settings), Toast.LENGTH_LONG).show();
+                Intent intent_setting = new Intent(this, Setting.class);
+                startActivity(intent_setting);
                 break;
-            case R.id.action_item1:
+            case R.id.action_calk:
                 Toast.makeText(Main.this, getString(R.string.action_item1), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, Calc.class);
-                startActivity(intent);
+                Intent intent_calk = new Intent(this, Calc.class);
+                startActivity(intent_calk);
                 break;
-            case R.id.action_item2:
+            case R.id.action_about:
                 Toast.makeText(Main.this, getString(R.string.action_item2), Toast.LENGTH_LONG).show();
-                break;
-            case R.id.action_item3:
-                Toast.makeText(Main.this, getString(R.string.action_item3), Toast.LENGTH_LONG).show();
+                Intent intent_about = new Intent(this, About.class);
+                startActivity(intent_about);
                 break;
         }
         return super.onOptionsItemSelected(item);

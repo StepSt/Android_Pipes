@@ -7,12 +7,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class Calc extends AppCompatActivity {
+public class Setting extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calc);
+        setContentView(R.layout.activity_setting);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -25,17 +25,17 @@ public class Calc extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.action_settings:
-                Toast.makeText(Calc.this, getString(R.string.action_settings), Toast.LENGTH_LONG).show();
+                Toast.makeText(Setting.this, getString(R.string.action_settings), Toast.LENGTH_LONG).show();
                 Intent intent_setting = new Intent(this, Setting.class);
                 startActivity(intent_setting);
                 break;
             case R.id.action_calk:
-                Toast.makeText(Calc.this, getString(R.string.action_item1), Toast.LENGTH_LONG).show();
+                Toast.makeText(Setting.this, getString(R.string.action_item1), Toast.LENGTH_LONG).show();
                 Intent intent_calk = new Intent(this, Calc.class);
                 startActivity(intent_calk);
                 break;
             case R.id.action_about:
-                Toast.makeText(Calc.this, getString(R.string.action_item2), Toast.LENGTH_LONG).show();
+                Toast.makeText(Setting.this, getString(R.string.action_item2), Toast.LENGTH_LONG).show();
                 Intent intent_about = new Intent(this, About.class);
                 startActivity(intent_about);
                 break;
