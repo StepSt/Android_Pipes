@@ -6,28 +6,52 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.FrameLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class Calc extends AppCompatActivity {
 
+    String[] data = {"Круглые трубы", "Прямоугольные трубы"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc);
 
-        ListView listView = (ListView)findViewById(R.id.listView);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        final String[] pipes_type = new String[] {
-                "Круглые трубы", "Прямоугольные трубы"
-        };
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,	android.R.layout.simple_list_item_1, pipes_type);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setAdapter(adapter);
+        spinner.setPrompt("Тип расчета");
+        spinner.setSelection(0);
+        final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
 
-        listView.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,int position, long id) {
+                switch (position)
+                {
+                    case 0:
+                        frameLayout.setVisibility(view.VISIBLE);
+                        break;
+                    case 1:
+                        frameLayout.setVisibility(view.GONE);
+                        break;
+                }
+                // показываем позиция нажатого элемента
+                Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
