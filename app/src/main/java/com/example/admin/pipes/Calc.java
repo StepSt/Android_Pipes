@@ -32,6 +32,7 @@ public class Calc extends AppCompatActivity {
         spinner.setPrompt("Тип расчета");
         spinner.setSelection(0);
         final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
+        final FrameLayout frameLayout2 = (FrameLayout) findViewById(R.id.frameLayout2);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -40,8 +41,10 @@ public class Calc extends AppCompatActivity {
                 {
                     case 0:
                         frameLayout.setVisibility(view.VISIBLE);
+                        frameLayout2.setVisibility(view.GONE);
                         break;
                     case 1:
+                        frameLayout2.setVisibility(view.VISIBLE);
                         frameLayout.setVisibility(view.GONE);
                         break;
                 }
@@ -93,5 +96,19 @@ public class Calc extends AppCompatActivity {
         Double res_M = res_pM*Double.parseDouble(edit_L.getText().toString());
         TextView text_M = (TextView) findViewById(R.id.text_M);
         text_M.setText(res_M.toString());
+    }
+    public  void Clic_Result_p (View view)
+    {
+        EditText edit_A = (EditText) findViewById(R.id.edit_A);
+        EditText edit_B = (EditText) findViewById(R.id.edit_B);
+        EditText edit_S_p = (EditText) findViewById(R.id.edit_S_p);
+        EditText edit_L_p = (EditText) findViewById(R.id.edit_L_p);
+        //0.0157 * S * (A + B - 2.86 * S) * L
+        Double res_pM_p = 0.0157*Double.parseDouble(edit_S_p.getText().toString())*(Double.parseDouble(edit_A.getText().toString())+Double.parseDouble(edit_B.getText().toString())- 2.86*Double.parseDouble(edit_S_p.getText().toString()));
+        TextView text_pM_p = (TextView) findViewById(R.id.text_pM_p);
+        text_pM_p.setText(res_pM_p.toString());
+        Double res_M_p = res_pM_p*Double.parseDouble(edit_L_p.getText().toString());
+        TextView text_M_p = (TextView) findViewById(R.id.text_M_p);
+        text_M_p.setText(res_M_p.toString());
     }
 }
