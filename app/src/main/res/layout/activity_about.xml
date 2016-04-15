@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="О компании"
+        android:text="@string/about"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Компания «СтройРезерв» является оптовым поставщиком трубной продукции по России и, в частности, по Уфе. В ассортименте представлены трубы б/у, трубы лежалые, трубы восстановленные.   ООО «СтройРезерв» ведёт свою деятельность с 2002 года. За это время работы наша компания зарекомендовала себя как надежный поставщик металлопродукции и труб различного назначения. Налаженная система прямых поставок  от производителя к потребителю, наличие складского хозяйства, высокий профессиональный уровень специалистов компании, позволяет качественно, и в максимально короткие сроки, выполнять договорные обязательства."
+        android:text="@string/text_about"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
@@ -29,18 +29,41 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Наш адрес: г.Уфа, ул. Фронтовых Бригад, 10 к1"
+        android:text="@string/adress"
         android:id="@+id/textView4"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/textView3" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Наши телефоны: +7 (347) 238-34-95, +7 (347) 267-77-47, +7 (347) 238-54-36"
+        android:text="@string/telefon"
         android:id="@+id/textView5"
         android:layout_below="@+id/textView4"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:autoLink="phone"
+        android:linksClickable="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_site"
+        android:id="@+id/textView10"
+        android:layout_marginTop="40dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/site"
+        android:id="@+id/textView15"
+        android:layout_alignTop="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:typeface="sans" />
 </RelativeLayout>
