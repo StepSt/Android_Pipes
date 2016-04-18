@@ -3,10 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:foo="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.admin.pipes.Main">
 
+    <com.example.admin.pipes.TextViewPlus
+        android:id="@+id/textViewPlus1"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:text="@string/about"
+        foo:customFont="Roboto-Black.ttf">
+    </com.example.admin.pipes.TextViewPlus>
 </RelativeLayout>
