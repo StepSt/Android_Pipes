@@ -3,30 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:foo="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.admin.pipes.About">
 
-    <TextView
+    <com.example.TextViewPlus
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/about"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        foo:customFont="Roboto-Medium.ttf">
+</com.example.TextViewPlus>
 
-    <TextView
+
+    <com.example.TextViewPlus
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_about"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20sp" />
+        android:layout_marginTop="20sp"
+        foo:customFont="Roboto-Medium.ttf">
+    </com.example.TextViewPlus>
 
-    <TextView
+    <com.example.TextViewPlus
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/adress"
@@ -34,9 +40,11 @@
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/textView3" />
+        android:layout_below="@+id/textView3"
+        foo:customFont="Roboto-Medium.ttf">
+    </com.example.TextViewPlus>
 
-    <TextView
+    <com.example.TextViewPlus
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/telefon"
@@ -45,9 +53,11 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
         android:autoLink="phone"
-        android:linksClickable="true"/>
+        android:linksClickable="true"
+        foo:customFont="Roboto-Medium.ttf">
+    </com.example.TextViewPlus>
 
-    <TextView
+    <com.example.TextViewPlus
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name_site"
@@ -56,14 +66,18 @@
         android:autoLink="web"
         android:linksClickable="true"
         android:layout_below="@+id/textView5"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        foo:customFont="Roboto-Medium.ttf">
+    </com.example.TextViewPlus>
 
-    <TextView
+    <com.example.TextViewPlus
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/site"
         android:id="@+id/textView15"
         android:layout_alignTop="@+id/textView10"
         android:layout_alignParentStart="true"
-        android:typeface="sans" />
+        android:typeface="sans"
+        foo:customFont="Roboto-Medium.ttf">
+    </com.example.TextViewPlus>
 </RelativeLayout>

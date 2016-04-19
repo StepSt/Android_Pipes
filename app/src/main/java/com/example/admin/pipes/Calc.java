@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Locale;
 
 
 public class Calc extends AppCompatActivity {
@@ -90,12 +91,12 @@ public class Calc extends AppCompatActivity {
         EditText edit_D = (EditText) findViewById(R.id.edit_D);
         EditText edit_S = (EditText) findViewById(R.id.edit_S);
         EditText edit_L = (EditText) findViewById(R.id.edit_L);
-        Double res_pM = ((Double.parseDouble(edit_D.getText().toString()) - Double.parseDouble(edit_S.getText().toString()))*Double.parseDouble(edit_S.getText().toString()))/40.65;
+        Double res_pM = ((Double.parseDouble(edit_D.getText().toString()) - Double.parseDouble(edit_S.getText().toString()))*Double.parseDouble(edit_S.getText().toString()))/40.55;
         TextView text_pM = (TextView) findViewById(R.id.text_pM);
-        text_pM.setText(res_pM.toString());
+        text_pM.setText(String.format( Locale.US, "%.2f", res_pM));
         Double res_M = res_pM*Double.parseDouble(edit_L.getText().toString());
         TextView text_M = (TextView) findViewById(R.id.text_M);
-        text_M.setText(res_M.toString());
+        text_M.setText(String.format( Locale.US, "%.2f", res_M));
     }
     public  void Clic_Result_p (View view)
     {
@@ -106,9 +107,9 @@ public class Calc extends AppCompatActivity {
         //0.0157 * S * (A + B - 2.86 * S) * L
         Double res_pM_p = 0.0157*Double.parseDouble(edit_S_p.getText().toString())*(Double.parseDouble(edit_A.getText().toString())+Double.parseDouble(edit_B.getText().toString())- 2.86*Double.parseDouble(edit_S_p.getText().toString()));
         TextView text_pM_p = (TextView) findViewById(R.id.text_pM_p);
-        text_pM_p.setText(res_pM_p.toString());
+        text_pM_p.setText(String.format( Locale.US, "%.2f", res_pM_p));
         Double res_M_p = res_pM_p*Double.parseDouble(edit_L_p.getText().toString());
         TextView text_M_p = (TextView) findViewById(R.id.text_M_p);
-        text_M_p.setText(res_M_p.toString());
+        text_M_p.setText(String.format( Locale.US, "%.2f", res_M_p));
     }
 }
